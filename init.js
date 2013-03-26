@@ -3,9 +3,7 @@ var fs      = require('fs')
   , http    = require('http')
   , express = require('express')
 
-var alias     = require('./lib/alias')
-  , trigger   = require('./lib/trigger')
-  , formatter = require('./lib/formatter')
+var formatter = require('./lib/formatter')
 
 var config = JSON.parse(fs.readFileSync('config/config.json', 'utf8'))
   , app    = express()
@@ -39,34 +37,13 @@ io.sockets.on('connection', function(socket) {
   log(socket.id + ' connected to ' + config.host + ':' + config.port)
 
   mud.addListener('data', function(data) {
-    var commands  = trigger.scan(data)
-      , formatted = formatter.go(data)
+    var formatted = formatter.go(data)
 
-    socket.emit('message', createResponse('updateWorld', formatted))
-
-    if (commands) {
-      for (var i = 0; i < commands.length; i++) {
-        mud.write(commands[i])
-      }
-    }
+    socket.emit('updateWorld', formatted)
   })
 
   socket.on('message', function(data) {
-    if (data.match(/^;alias add/i)) {
-      alias.create(data)
-    } else if (data.match(/^;alias ls/i)) {
-      socket.send(createResponse('listAliases', alias.list()))
-    } else if (data.match(/^;alias rm/i)) {
-      alias.remove(data)
-    } else if (data.match(/^;trigger add/i)) {
-      trigger.create(data)
-    } else if (data.match(/^;trigger ls/i)) {
-      socket.send(createResponse('listTriggers', trigger.list()))
-    } else if (data.match(/^;trigger rm/i)) {
-      trigger.remove(data)
-    } else {
-      mud.write(alias.format(data))
-    }
+    mud.write(data + "\r\n")
   })
 })
 
