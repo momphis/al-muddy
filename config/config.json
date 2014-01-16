@@ -1,5 +1,6 @@
 {
-  "name": "CyberASSAULT",
-  "host": "cyberassault.org",
-  "port": "11111"
+  "name": "limaweb",
+  "host": "mud.accursed-lands.com",
+  "port": "8600",
+  "term": "test"
 }
