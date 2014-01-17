@@ -1,6 +1,6 @@
 # muddy
 
-Fork of (http://github.com/dannytatom/muddy/issues).
+Fork of (http://github.com/dannytatom/muddy.git).
 
 
 ## Features
