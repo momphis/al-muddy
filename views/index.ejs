@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
  
     <style>
-  .dialog { min-width: 300px; min-height: 300px; } */
+  .ui-dialog { opacity: 0.5 } 
+  .ui-dialog-frontmost, .ui-dialog-dragging { opacity: 0.8 }  
   .output { z-index: -1 }
   </style>
 
@@ -56,7 +57,7 @@
         </div>
         <div class="navbar-inner">
           <ul class="nav navbar-nav">
-            <li class="active newDialog"><a href="#">New Dialog</a></li>
+            <li class="active newDialog" id="new-dialog"><a href="#">New Dialog</a></li>
             <li><a href="#about">Delete All Dialogs</a></li>
             <li><a href="#contact">Minimize All Dialogs</a></li>
           </ul>
@@ -83,9 +84,9 @@
       </div>
 
     </div><!-- /.container -->
-
+<!--
     <div class="dialog"><p>Some data we want to pipe out from the mud we can display here<br>This window is draggable and resizeable</p></div>
-    
+-->
     <!-- hidden modal.  use for login/login out? -->
     <div class="modal fade draggable" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -117,10 +118,11 @@
 
     <script type='text/javascript' src='/socket.io/socket.io.js'></script>
     <!--<script type='text/javascript' src='/js/ext/jquery-1.4.4.min.js'></script>-->
+    <script type='text/javascript' src='/js/jquery.dialogextend.js'></script>
     <script type='text/javascript' src='/js/lib/world.js'></script>
     <script type='text/javascript' src='/js/muddy.js'></script>
     <script type='text/javascript' src='/js/ui.js'></script>
+    <script type='text/javascript' src='/js/ui.dialogextend.js'></script>
 
-    
   </body>
 </html>
