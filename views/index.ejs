@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
  
     <style>
-  #draggable { min-width: 150px; min-height: 150px; padding: 0.5em; z-index: 1; top:100px; left:1000px; position: fixed; }
+  .dialog { min-width: 300px; min-height: 300px; } */
   .output { z-index: -1 }
   </style>
 
@@ -56,9 +56,9 @@
         </div>
         <div class="navbar-inner">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active newDialog"><a href="#">New Dialog</a></li>
+            <li><a href="#about">Delete All Dialogs</a></li>
+            <li><a href="#contact">Minimize All Dialogs</a></li>
           </ul>
 
           <ul class="nav nav-navbar pull-right">
@@ -83,23 +83,27 @@
       </div>
 
     </div><!-- /.container -->
-<div class="modal fade draggable" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-                         <p>One fine body&hellip;</p>       ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+    <div class="dialog"><p>Some data we want to pipe out from the mud we can display here<br>This window is draggable and resizeable</p></div>
+    
+    <!-- hidden modal.  use for login/login out? -->
+    <div class="modal fade draggable" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Modal for login/logout stuff/settings</p>       
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
     <!-- Bootstrap core JavaScript
