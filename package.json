@@ -1,9 +1,10 @@
 {
   "name": "muddy",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "dependencies": {
     "ejs": "0.8.3",
     "express": "3.1.0",
-    "socket.io": "0.9.13"
+    "socket.io": "0.9.13",
+    "telnet": "0.0.1"
   }
 }
