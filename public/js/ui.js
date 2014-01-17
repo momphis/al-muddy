@@ -1,0 +1,6 @@
+$(function() {
+    
+;
+$( ".draggable" ).draggable();
+    
+});

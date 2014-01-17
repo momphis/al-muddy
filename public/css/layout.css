@@ -1,11 +1,23 @@
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 50px;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #909090;
   background: #272727;
   background-image: url('/img/background.png');
+}
+
+.container {
+    width: 100%;
+}
+
+.nav-right {
+    float: right;
+}
+
+.btn-logout {
+    margin-top:10px;
 }
 
 @font-face {
@@ -23,32 +35,7 @@ ul {
   list-style-type: none;
 }
 
-#header {
-  padding: 15px;
-  height: 20px;
-  background: url('/img/header.png') repeat-x;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.30);
-  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.30);
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.30);
-}
 
-  #header h1 {
-    float: left;
-    margin: 2px 15px 0 0;
-    width: 75px;
-    height: 25px;
-    background: url('/img/logo.png') repeat-x;
-    text-indent: -5000em;
-  }
-
-  #header p {
-    margin: 5px 0 0 0;
-    float: left;
-  }
-
-    #header p span {
-      color: #ffffff;
-    }
 
 #client {
   width: 100%;
@@ -67,11 +54,11 @@ ul {
   }
 
 #input {
-  position: fixed;
+ /* position: fixed;
   bottom: 0;
   padding: 10px;
-  height: 25px;
-  background: #1a1a1a url('/img/input.png') repeat-x;
+  height: 25px; 
+  background: #1a1a1a url('/img/input.png') repeat-x; */
 }
   
   #input input {

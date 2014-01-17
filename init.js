@@ -44,6 +44,20 @@ io.sockets.on('connection', function(socket) {
 
     socket.emit('message', createResponse('updateWorld', formatted))
 
+        // this should be the only time we need to do this
+        if ( data.search("Detecting terminal type...") != -1) {
+           //'IAC WILL TERMINAL-TYPE'
+           var buff = new Buffer( [ 255, 251, 24] );
+           mud.write( buff , 'binary');
+          
+           setTimeout ( function () {
+             //'IAC SB TERMINAL-TYPE IS "ANSI" IAC SE'
+             var buff = new Buffer( [ 255, 250, 24, 0, 65, 78, 83, 73, 255, 240 ] );
+             mud.write( buff, 'binary' );
+           }, 1 );    
+           
+        } 
+ 
     if (commands) {
       for (var i = 0; i < commands.length; i++) {
         mud.write(commands[i])

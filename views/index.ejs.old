@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= mud %></title>
+
+    <meta charset='utf-8' />
+
+    <link rel='icon' type='image/png' href='/img/icon.png' />
+
+    <link rel='stylesheet' type='text/css' media='all' href='/css/layout.css' />
+    <link rel='stylesheet' type='text/css' media='all' href='/css/colors.css' />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"> -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <!-- 1.4.4 was for muddy.  1.9.1 seems to work as well (needed for draggable) -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!--<script type='text/javascript' src='/js/ext/jquery-1.4.4.min.js'></script>-->
+    <script type='text/javascript' src='/js/lib/world.js'></script>
+    <script type='text/javascript' src='/js/muddy.js'></script>
+    
+    <!-- draggable -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+   <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; z-index: 1; top:0px; left:1000px; position: absolute }
+  .output { z-index: -1 }
+  </style>
+  <script>
+  $(function() {
+    $( "#draggable" ).draggable();
+  });
+  </script> 
+  </head>
+
+  <body>
+    <div id="draggable" class="ui-widget-content">
+    <p>Survey should go here</p>
+  </div>
+    <div id='header'>
+        <ul>
+            <li class=<h1>muddy</h1>
+
+      <p>Playing <span><%= mud %></span></p>
+    </div>
+
+    <div id='client'>
+      <div id='world' class='output'></div>
+    </div>
+
+    <div id='input'>
+      <input type='text' />
+    </div>
+  </body>
+
+</div>
+</html>
